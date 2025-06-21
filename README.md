@@ -1,12 +1,8 @@
-# React + Vite
+# Latex Processor Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es una aplicación simple en react que envía una fórmula lógica al [backend](https://github.com/JuanCamiloPerilla/latex-processor-backend/blob/master/README.md) y renderiza el LaTex resultante. Además, permite al usuario
+seleccionar la precedencia de los operadores lógicos.
 
-Currently, two official plugins are available:
+Este proyecto utiliza [Katex](https://katex.org/) para renderizar las fórmulas escritas en sintaxis de latex en el navegador:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+![image](https://github.com/user-attachments/assets/d9eed53a-1d7a-4b8f-be2d-0e404e712e7d)
