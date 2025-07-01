@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import { BlockMath } from 'react-katex';
 import 'katex/dist/katex.min.css';
 import OperatorPrecedenceSelector from "./OperatorPrecedenceSelector";
-const backendUrl = import.meta.env.VITE_RAILS_API_URL || "http://localhost:3000";
+import RewrittingStepViewer from "./components/rewritting_steps_viewer/RewrittingStepViewer";
+const backendUrl = "http://localhost:3000";
 
 export default function LatexEditor() {
   const [input, setInput] = useState('p \\rightarrow q \\leftrightarrow r \\lor ( s \\land p)');
   const [output, setOutput] = useState("");
+  const [rewritingSteps, setRewritingSteps] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [priority, setPriority] = useState(["¬", "∧", "∨", "→", "↔"]);
@@ -30,6 +32,10 @@ export default function LatexEditor() {
       const data = await response.json();
       console.log("Response from backend:", data);
       setOutput(data.latex_result);
+      setRewritingSteps(data.steps || []);
+      if (!response.ok) {
+        throw new Error(data.error || "Error al procesar la fórmula");
+      }
     } catch (err) {
       setError(err.toString());
     } finally {
@@ -56,8 +62,6 @@ export default function LatexEditor() {
         placeholder="Escribe tu fórmula LaTeX aquí"
         style={{ fontSize: '1rem', width: '100%', marginBottom: '1rem' }}
       />
-
-      <h3>Vista previa:</h3>
       <div style={{ background: '#f0f0f0', padding: '1rem', color: '#333'}}>
         <BlockMath math={input} />
       </div>
@@ -78,6 +82,10 @@ export default function LatexEditor() {
           </div>
         </div>
       )}
+      <RewrittingStepViewer steps={rewritingSteps} className="mt-6">
+        <h2 className="mt-6">Pasos de Reescritura</h2>
+        <p>Los pasos de reescritura se mostrarán aquí una vez que se procese la fórmula.</p>
+      </RewrittingStepViewer>
     </div>
   );
 }
