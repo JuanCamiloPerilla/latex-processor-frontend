@@ -6,7 +6,7 @@ import RewrittingStepViewer from "../rewritting_steps_viewer/RewrittingStepViewe
 import TreeStepsPage from '../tree/TreeStepsPage';
 import './LatexEditor.css';
 
-const backendUrl = process.env.VITE_RAILS_API_URL || "http://localhost:3000";
+const backendUrl = import.meta.env.VITE_RAILS_API_URL || "http://localhost:3000";
 
 export default function LatexEditor() {
   const [input, setInput] = useState('p \\rightarrow q \\leftrightarrow r \\lor ( s \\land p)');
