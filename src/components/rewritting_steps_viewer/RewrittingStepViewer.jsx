@@ -16,6 +16,10 @@ const RewritingStepViewer = ({ steps }) => {
   return (
     <div className="postfix-panel">
       <h2>Conversión a Notación Postfija</h2>
+      <p>
+        Aquí se muestran los pasos de reescritura de la fórmula lógica en notación postfija.
+        Cada paso incluye el token actual, la acción tomada, la pila de operadores y la cola de salida.
+      </p>
       <div className="postfix-steps">
         {steps.map((step, index) => (
           <div key={index} className="postfix-step">
@@ -35,7 +39,7 @@ const RewritingStepViewer = ({ steps }) => {
                 </div>
               </div>
               <HorizontalList className="output-queue" items={step.output_queue} title="Cola de salida" />
-              <HorizontalList className="stack" items={step.stack} title="Pila" />
+              <HorizontalList className="stack" items={step.stack} title="Pila de Operadores" />
             </div>
             
             

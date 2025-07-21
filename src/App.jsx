@@ -2,7 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import LatexEditor from './LatexEditor';
+import LatexEditor from './components/latex_editor/LatexEditor';
 
 function App() {
   const [count, setCount] = useState(0)

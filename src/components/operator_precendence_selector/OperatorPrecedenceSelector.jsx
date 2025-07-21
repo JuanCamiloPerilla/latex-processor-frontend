@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./OperatorPrecedenceSelector.css";
 
 const DEFAULT_OPERATORS = ["¬", "∧", "∨", "→", "↔"];
 
@@ -22,15 +23,21 @@ export default function OperatorPrecedenceSelector({ onChange }) {
   };
 
   return (
-    <div className="mb-4">
-      <h2 className="font-semibold mb-2">Prioridad de operadores</h2>
-      <ul>
+    <div className="precedence-selector">
+      <ul className="operator-priority-table">
+        <li key={0}>
+          <span className="operators-table-header">↑↓</span>
+          <span className="operators-table-header">Operador</span>
+          <span className="operators-table-header">prioridad</span>
+        </li>
         {operators.map((op, index) => (
-          <li key={op} className="flex items-center gap-2 mb-1">
-            <span className="w-8 text-center text-lg">{op}</span>
-            <button onClick={() => moveUp(index)} className="px-2 py-1 text-sm bg-gray-200 rounded">⬆️</button>
-            <button onClick={() => moveDown(index)} className="px-2 py-1 text-sm bg-gray-200 rounded">⬇️</button>
-            <span className="text-sm text-gray-500">prioridad: {operators.length - index}</span>
+          <li key={op}>
+            <div className="operators-table-row-buttons">
+              <button onClick={() => moveUp(index)} className="operators-table-row-button-up">↑</button>
+              <button onClick={() => moveDown(index)} className="operators-table-row-button-down">↓</button>
+            </div>
+            <span className="operators-table-row">{op}</span>
+            <span className="operators-table-row">{operators.length - index}</span>
           </li>
         ))}
       </ul>

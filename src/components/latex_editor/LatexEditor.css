@@ -1,0 +1,54 @@
+.input-panel {
+    display: grid;
+    grid-template-columns: 100%;
+}
+
+
+
+.latex-input-container {
+    grid-column: 1 / span 2;
+}
+
+.latex-input-textarea {
+    width: 100%;
+    height: 100px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: none;
+}
+
+.latex-preview-container {
+    grid-column: 1 / span 2;
+    display: flex;
+    background: #f0f0f0;
+    color: #333;
+    border-radius: 4px;
+    height: 100px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.submit-controls {
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+}
+
+.submit-button-container {
+    grid-column: 2;
+    grid-row: 1;
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.precedence-selector-container {
+    grid-column: 3;
+}
+
+.results-container {
+    margin-top: 1rem;
+
+}

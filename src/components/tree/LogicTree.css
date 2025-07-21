@@ -1,0 +1,14 @@
+.tree-container {
+    width: 100%;
+    height: 500px;
+    background: var(--color-primary);
+}
+
+.react-flow__node{
+    background: var(--color-surface);
+    color: var(--color-highlight);
+    border-radius: var(--base-border-radius);
+    padding: 0.5rem;
+    font-family: monospace;
+    font-size: 20pt;
+}

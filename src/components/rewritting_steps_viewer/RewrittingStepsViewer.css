@@ -1,12 +1,3 @@
-:root {
-  --color-primary:      #11302a; /* Main brand color */
-  --color-secondary:    #036264; /* Accent or support color */
-  --color-surface:      #8f5774; /* Backgrounds (cards, panels) */
-  --color-on-surface:   #e0829d; /* Text/icons on surface */
-  --color-highlight:    #dac4d0; /* Warnings, callouts, or attention-grabbers */
-  --base-margin: 0.5rem; /* Base margin for components */
-  --base-border-radius: 8px; /* Base border radius for rounded corners */
-}
 .postfix-panel {
   border: 1px solid #ccc;
   padding: 1rem;
