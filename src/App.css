@@ -6,10 +6,10 @@
 }
 
 :root {
-  --color-primary:      #11302a; /* Main brand color */
-  --color-secondary:    #036264; /* Accent or support color */
-  --color-surface:      #8f5774; /* Backgrounds (cards, panels) */
-  --color-on-surface:   #e0829d; /* Text/icons on surface */
+  --color-primary:      #273F4F; /* Main brand color */
+  --color-secondary:    #447D9B; /* Accent or support color */
+  --color-surface:      #FE7743; /* Backgrounds (cards, panels) */
+  --color-on-surface:   #dac4d0; /* Text/icons on surface */
   --color-highlight:    #dac4d0; /* Warnings, callouts, or attention-grabbers */
   --base-margin: 0.5rem; /* Base margin for components */
   --base-border-radius: 8px; /* Base border radius for rounded corners */

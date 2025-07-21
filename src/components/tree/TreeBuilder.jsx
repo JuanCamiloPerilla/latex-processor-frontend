@@ -5,7 +5,7 @@ function treeToReactFlow(tree, baseX = 0, baseY = 0, level = 0) {
   if (!tree) return { nodes: [], edges: [] };
 
   const height = getTreeHeight(tree);
-  const offset = ((height*50))+100
+  const offset = ((height*100))+100
 
   const id = `${tree.value}-` + Math.random().toString(36).substring(2, 8);
   const node = {

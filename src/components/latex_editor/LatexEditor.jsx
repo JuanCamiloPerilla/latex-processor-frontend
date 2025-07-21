@@ -6,7 +6,7 @@ import RewrittingStepViewer from "../rewritting_steps_viewer/RewrittingStepViewe
 import TreeStepsPage from '../tree/TreeStepsPage';
 import './LatexEditor.css';
 
-const backendUrl = "http://localhost:3000";
+const backendUrl = process.env.VITE_RAILS_API_URL || "http://localhost:3000";
 
 export default function LatexEditor() {
   const [input, setInput] = useState('p \\rightarrow q \\leftrightarrow r \\lor ( s \\land p)');
@@ -113,7 +113,7 @@ export default function LatexEditor() {
       <div className='results-container'>
         <div className="postfix-result-container">
           <div className='postfix-rewriting-rules'>
-            <h2>Reglas</h2>
+
           </div>
           <RewrittingStepViewer steps={rewritingSteps} className="mt-6">
             <h2 className="mt-6">Pasos de Reescritura</h2>
